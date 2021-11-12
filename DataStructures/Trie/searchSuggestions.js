@@ -1,5 +1,9 @@
-/* 1268. Search Suggestions System 
+/* 
+1268. Search Suggestions System 
 https://leetcode.com/problems/search-suggestions-system/
+
+Trie + DFS
+_________________________________________________________
 m
 • mobile
 • moneypot
@@ -28,9 +32,10 @@ function suggestedProducts(products, searchWord) {
   let suggestedArray = [];
   for (let j = 0; j < searchWord.length; j++) {
     let char = searchWord[j];
-    prefix += char;
+    prefix += char; // String concatenation is O(m) operation
     suggestedArray.push(trie.getWordsStartingWith(prefix));
   }
+  //'m' is the length of the searchword
   return suggestedArray;
 }
 
@@ -68,7 +73,14 @@ class Trie {
     if (currentNode.isComplete === true) {
       result.push(prefix);
     }
-    //allows us to push products to result in a lexicographical order
+    /*  
+Here we are iterating through the children of the last character of the initial substring passed to the function dfsWithPrefix.
+ If substring is "mo" then the first character we do a
+ recursive dfs traversal is "b" because we traverse down the trie tree in an alphabetically increasing order. 
+ • This for loop is iterating through the lowercase alphabet
+ • Lowercase ASCII characters are represented in the range of 97-122
+ • a === 97, z === 122  => a->z
+ */
     for (let c = 97; c <= 122; c++) {
       let currChar = String.fromCharCode(c);
       if (currentNode.children[currChar]) {
@@ -96,3 +108,17 @@ class Trie {
     return result;
   }
 }
+
+/* 
+'M' is the total number of characters in  the products array
+'m' is the length of the searchWord
+'n' is the total number of nodes in the trie
+Time Complexity: O(m^2)
+• To build the trie it takes a time complexity of O(m)
+• DFS traversal takes O(26) --> O(1) time because in the worst case we recursively call dfsWithPrefix 26 times.
+• In the function named suggestedProducts we are iterating through the search word (O(m)) and during each iteration we are concatenating a string(O(m)), hence O(m^2)
+Space Complexity: O(n)
+• O(26n) -> O(n)
+  • 26 is the alphabet size.
+  • Each node in the trie can have up to 26 children
+*/
