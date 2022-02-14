@@ -39,6 +39,18 @@ const isAnagram = function (s, t) {
 
   return true;
 };
+/* 
+Time complexity: O(n)
+•If s.length !== t.length then we promptly return false. Therefore can say that the runtime is O(2s) -> O(2n) -> O(n).
+   * s.length === t.length 
+        -This allows to say that s.length + t.length = 2s.length 
+   * We are iteterating through every character in 2s, thus indicationg linear time.
+   * n represents s 
+   * 2n -> n (drop constants)
+
+Space Complexity: 0(26) -> O(1)
+•The hashTable could only have at most 26 entries
+*/
 
 /* 
 Notes:
