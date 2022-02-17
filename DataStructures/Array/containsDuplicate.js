@@ -27,7 +27,7 @@ Time: O(n)
     -We iterate through each element in the array once (O(n) time)
         •On average hashTable lookups take up O(1) time
         •On average hashTable insertions take up O(1) time
-Space:
+Space: O(n)
     -At worst case our array will not have any duplicates
         •The number of entries in hashTable will be equal to the size of the array
  */
