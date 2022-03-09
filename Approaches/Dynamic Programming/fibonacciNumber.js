@@ -63,10 +63,18 @@ var fib = function (n) {
   return fib(n - 1) + fib(n - 2);
 };
 /*
-Time O(2 ^n) original time (exponential time complexity- 
-• This is largely due to the repeated recursive calls
-Space O(n)
-•'n' is the max amount of elements in the call stack at any given time
+Time Complexity O(2 ^n)
+• O( 2^n) this is very slow 
+	◦ O(n!) is the worst but this is bad 
+	◦ Worse than O(n ^2)
+	◦ In this function we make two recursive calls
+		‣ Every time the function is called we are calling the function 2 more times
+		‣ We are making two function calls for n times
+
+Space: O(n)
+• The max amount of function calls on the call stack at any given time is 'n'
+	◦ When we hit the base case we start popping of function calls of the call stack
+	◦ stack can be an array/linked-list or the call stack
 */
 
 //F(2) = F(1) + F(0) = 1 + 0 = 1.
