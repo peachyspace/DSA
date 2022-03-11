@@ -22,8 +22,8 @@ function numberOfWaysToMakeChange(n, denoms) {
 }
 
 /* 
-Time: O(n * c)
-• We iterate through each of the coins in the coins array(input) and for each of them, we are then iterating through OUR array of length n + 1
+Time: O(n * c) 'n': array created, 'c':length of input array
+• We iterate through each of the coins in the coins array(input) and for each of them, we iterated through OUR array of length n + 1
 	◦ During each iteration through OUR array, we are applying the formula 
 		‣ the formula is executed in constant time
 
