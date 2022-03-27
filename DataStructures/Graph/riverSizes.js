@@ -94,7 +94,8 @@ Space: O( W * H ) or O( n )
   */
 
 /* 
-
+we do dfs or bfs starting from the given node until we hit null or visited
+• this allows us to get the size of the river if it exists at the given node
 • Overview 
 	◦ First map through the whole map and make very element in the new matrix 0
 		‣ we use a matrix instead of a hashTable because it will be easier to keep insert and look up value in this visited matrix  
