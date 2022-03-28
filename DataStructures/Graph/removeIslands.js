@@ -113,7 +113,7 @@ const getNeighbors = (matrix, row, col) => {
  Time: O( w * h ) + O( w * h ) + O( w * h ) + O(1) -> O( w * h )
 • w is the width/columns in the matrix
 • h is the height/rows in the matrix
-• We have 3 nested for loop s that take O(w • h ) time
+• The removeIslands function has 3 nested for loops that all take O( w • h ) time 
 • What is total amount of iterations done during the execution of the 2nd nested for loop?: O(w*h) + O(w*h) = 2(O(w*h)) -> O(w*h) time
 	◦ the nested for loop wont do more than O(w * h) iterations
 	◦ the findOnesConnectedToBorder function wont do more than O(w * h) iterations throughout the whole execution of the nested for loop
