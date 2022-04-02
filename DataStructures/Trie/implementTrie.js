@@ -8,7 +8,7 @@ const TrieNode = function () {
   this.children = new Array(26).fill(null);
 };
 const Trie = function () {
-  this.root = new TrieNode(); //empty tree
+  this.root = new TrieNode();
 };
 
 /**
