@@ -124,7 +124,7 @@ Time :
 				◦ we use'k' because our min heap will never have more than nodes since we use the poll function after we bubble up to preserve the size
 			• This function also calls the poll function which preserves the length of the heap to be k: O(log k) time
 				◦ we use 'k' because after you remove the root and replace it with most recently added element, you then bubble down and that will take at most O(log( k + 1 )) -> O(log (k) ) comparisons 
-• add function of the heap: O(m) * (O(log k) + O(log k) )-> O(m *log k) time
+• add function: O(m) * (O(log k) + O(log k) )-> O(m *log k) time
 	◦ 'm' is the number of calls to the add method
 	◦ we call the heap offer method which takes O(log k ) time
 	◦ when the heap size exceed k we call the poll function and that takes O(log k) time
@@ -141,6 +141,7 @@ Why are we using a min heap of size K instead of a max heap of size k?
     ◦ By maintaining a min heap of size k, we are are always keeping the k largest values 
         - This is done by always removing the smallest values when the heap's size exceeds k  
 */
+
 /* 
 • KthLargest is an object that has
 	◦ a k property
