@@ -1,3 +1,7 @@
+/* 
+760. Find Anagram Mappings
+https://leetcode.com/problems/find-anagram-mappings/
+*/
 /**
  * @param {number[]} nums1
  * @param {number[]} nums2
