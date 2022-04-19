@@ -18,9 +18,9 @@ const isValidSudoku = function (board) {
       let x = Math.floor(i / 3);
       let y = Math.floor(j / 3);
       let isDuplicate =
-        hashMap["r" + i + currNum] ||
-        hashMap["c" + j + currNum] ||
-        hashMap["s" + x + y + currNum];
+        hashMap[`r${i}${currNum}`] ||
+        hashMap[`c${j}${currNum}`] ||
+        hashMap[`s${x}${y}${currNum}`];
       if (isDuplicate) return false;
       //add to hashmap
       hashMap[`r${i}${currNum}`] = 1;
@@ -30,7 +30,6 @@ const isValidSudoku = function (board) {
   }
   return true;
 };
-
 /*
 Time: O(m*n)
 • m is the length of the board
