@@ -26,12 +26,15 @@ Steps:
 	◦ we did this so our array can have a top step
 	◦ this also helps avoid errors
 • Do the following because we are guaranteed to have a cost array with two elements
-• do a reverse iteration through the cost array starting at the second to last index
+• do a reverse iteration through the cost array starting at the third to last index
 	◦ update the value of the current index  by adding the min of the value between  currentIndex+1 or currentIndex + 2 
 • return the min between the values at index 0 or 1
 
- start at the 2nd to last index because min cost to get to the top stair will always be the original value at the 2nd to last index. ex:
+ start at the 3rd to last index because the min cost to get to the top stair will always be the original value at the 2nd to last index. ex:
+• [10, 15, 20, 0]
+•  0     1    2   3  index
+•  1     2    3   4  length
 • 1 jump cost: $20 + cost at index 3($0: at top of the stairs)
-• 2 jumps cost: past he top of the stairs
+• 2 jumps cost: out of bounds(past the top of the stairs)
 • min cost of jumps: $20
 */
