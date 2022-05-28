@@ -190,3 +190,46 @@ DP Steps:
 		‣ lps will either remain the same or will be updated to the substring created by i and j (if bigger than lps)
 • return lps
 */
+
+//Two pointers (less space used)
+const longestPalindrome = function (s) {
+  let longStr = "";
+  for (let i = 0; i < s.length; i++) {
+    let len1 = expandFromMid(i, i, s); //O(n)
+    let len2 = expandFromMid(i, i + 1, s); //O(n)
+    let currPal = len1.length > len2.length ? len1 : len2;
+    if (longStr.length < currPal.length) {
+      longStr = currPal;
+    }
+  }
+  return longStr;
+};
+
+const expandFromMid = (left, right, s) => {
+  //let start = 0
+  let start = 0;
+  let end = 0;
+  //if(s[left] !== s[right]) return ''
+
+  while (left >= 0 && right < s.length && s[left] === s[right]) {
+    start = left;
+    end = right;
+    left--;
+    right++;
+  }
+  return s.substring(start, end + 1); //O(n)
+};
+
+//find the middle and expand from there until you reach the front and end border
+//we do it twice in order to check the string given to us which can be odd or even
+//- middle(i, i)  -> 'aba'  -> 'b' is the middle
+//-no middle(i, i+1)  'abba' -> 'bb' is the middle
+
+/*
+Time: O(n^2)
+- We iterate through every characterO(n)
+- for each character we expand from the middle of the string: O(n)
+
+Space: O(1)
+- no additinal space is used besides pointers(don't grow as input grows)
+*/
