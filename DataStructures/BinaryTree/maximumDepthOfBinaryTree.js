@@ -32,10 +32,10 @@ Time: O(n)
 - n is the total amount of nodes in the given tree
 - We iterated through every node in the given tree
 
-Space: Worst: O(n),  Average: O(log(n))
+Space: Worst: O(n),  Best: O(log(n))
 - In the worst case the the binary tree is skewed
    meaning that the call stack has n frames in it
-- Average case the binary tree is balanced meaning
+- Best case the binary tree is completely balanced meaning
   that the call stack will have log(n) frames
   - the height of a balanced tree is log(n) 
     meaninfg that the call stack would have log(n) frames
