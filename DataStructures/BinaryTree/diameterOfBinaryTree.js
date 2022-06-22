@@ -28,7 +28,7 @@ Time: O(n)
 - the recursive funtion visited every node in the binary
   tree once
   
- Space
+ Space: Worst: O(n), Best: O(log(n))
  - in the worst case the binary tree is skewed,meaning
     that the call stack would have n frames
     - all the nodes are on one branch of the tree.
