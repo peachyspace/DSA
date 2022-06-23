@@ -34,12 +34,19 @@ const goodNodes = function (root) {
   return dfs(root, max);
 };
 
-/* 
-Time: O(n), n is the number of nodes in the given tree
-• We visit every node in the given tree
+/*
+Time: O(n)
+- n is the total amount of nodes in the given 
+  binary tree
+- visited every node in the binary tree
 
-Space: non-skewed tree: O(h) OR skewed tree:O(n) 
-• The max amount of frames on the call stack at any given time will depend on the height of the tree. However in the worst case the tree is skewed, meaning that all the nodes are all in one branch, hence call stack will hold n frames
+Space: 
+- h is the height of the binary tree
+- In the worst case the binary tree is skewed,
+  meaning that the call stack will hold n frames
+- In the best case the binary tree is balanced,
+  meaing that the call stack will 
+  hold h frames -> log(n) frames
 */
 
 /* 
@@ -53,4 +60,21 @@ Space: non-skewed tree: O(h) OR skewed tree:O(n)
 //2) leftSubtreeNumOfGNodes = explore left node(pass max val)
 //3) rightSubtreeNumOfGNodes =explore right node(pass max val)
 //4) return numOfGoodNodes + leftSubtreeNumOfGNodes + rightSubtreeNumOfGNodes
+*/
+
+/*
+good nodes so far = currGoodNodeTotal + leftPathGN + rightPathGN
+ When do we update max?
+ - we update when curr.val > max
+
+ When do we have a good node?
+ - max <= curr.val
+ - current node is greater than or equal to all 
+    of the nodes above it in this current branch
+
+How do we know that the current node is not a goodNode?
+- keep track of a max value of the current branch
+- this way we know that if curr.val < max then 
+  one or more of it's ancestor nodes are greater than
+  curr.val
 */
