@@ -107,15 +107,13 @@ const kClosest = function (points, k) {
 };
 
 /*
-Time: O(log k) + O(k log k) --> O( log k)
+Time: O(n log(k) + n log(k)) -> O(n log(k))
 • n is the length of the points array
 • k is an integer given to us
 • we iterate 'n' times and in each iteration we either :
 	◦ enqueue(point, distance): O(log k) time
 	◦ enqueue and dequeue: O(log k) time - > O(logk + logk) = O(log k) time
-• we iterate 'k' times and for each iteration we
-	◦ push the point property of the dequeued node
-		‣ O(log k) time
+
 
 Space:O(k)
 • the maxHeap and the result array are both of length k
